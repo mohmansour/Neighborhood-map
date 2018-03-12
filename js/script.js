@@ -165,7 +165,7 @@ var View = function() {
     self.filter = ko.observable('');
 
     self.locationsFilter = function() {
-        var searchFilter = self.filter().toLowerCase();
+        var searchFilter = self.filter().toUpperCase();
         self.filteredLocations.removeAll();
         self.place.forEach(function(item) {
             item.marker.setVisible(false);
