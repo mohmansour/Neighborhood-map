@@ -4,43 +4,49 @@ var map;
  // list of locations
 var locations = [
     {
-           title: 'Gharb Seheil',
-           location: {lat: 24.058751, lng: 32.863688},
-           venueID:'a34a1f11d23329669a7cc5'
+           title: 'Zawya Art House Cinema',
+           location: {lat: 30.050117, lng: 31.238919},
+           venueID:'5320a3d3498e1a85cdc44768'
+         },
+         //error
+          {
+           title: 'Cairo Opera House',
+           location: {lat: 30.042487, lng: 31.224457},
+           venueID:'4c963c5303413704fd8982ef'
+         },
+         //error
+          {
+           title: 'Qasr al-Nil Bridge',
+           location: {lat: 30.043768, lng: 31.229450},
+           venueID:'4e69b9f445ddadf2d027e96e'
+         },
+         //error
+          {
+           title: 'Cairo Tower',
+           location: {lat: 30.045915, lng: 31.224290},
+           venueID:'4c3c3e06a9509c74150c395b'
+         },
+         //error
+          {
+           title: 'The Egyptian Museum',
+           location: {lat: 30.047847, lng: 31.233649},
+           venueID:'4b653727f964a5203ee92ae3'
          },
           {
-           title: 'High Dam',
-           location: {lat: 23.970883, lng: 32.877270},
-           venueID:'c79f447794e224b456c6728'
+           title: 'Tahrir Square',
+           location: {lat: 30.044069, lng: 31.235512},
+           venueID:'4cb48a7e1463a143dfb7bba9'
          },
           {
-           title: 'Porto Sono Restaurant',
-           location: {lat: 24.127199, lng: 32.894669},
-           venueID:'4e7e567e9a528d2b1cf68395'
-         },
-          {
-           title: 'Tombs of the Nobles',
-           location: {lat: 25.730751, lng: 32.6093407},
-           venueID:'4e79dbc8483b1d4edb624001'
-         },
-          {
-            title: 'Old Cataract Aswan', 
-            location: {lat: 24.082280, lng: 32.887721},
-            venueID:'50940c6490e72e1a77650fb1'
-
-          },
-          {
-            title: 'Nubian Museum', 
-            location: {lat: 24.079425, lng: 32.889175},
-            venueID:'cab34ea44a8224bf5c52b40'
-
-          },
-          {
-            title: 'Abu Simbel Temple', 
-            location: {lat: 22.337232, lng: 31.625799},
-            venueID:'cc0ff6667a3b1f7651bc60e'
-
-          }
+           title: 'The Museum of Islamic Art',
+           location: {lat: 30.044362, lng: 31.252368},
+           venueID:'4d41197000e8a35d0d3e01fb'
+         }, 
+         {
+           title: 'Abdeen Palace',
+           location: {lat: 30.043003, lng: 31.247780},
+           venueID:'4f169cc8e4b0044a28561a2a'
+         }
 ];
 
 
@@ -48,8 +54,8 @@ var locations = [
 function gmap() {
     
     map = new google.maps.Map(document.getElementById('map'), {
-        zoom: 17,
-        center: {lat: 24.088938, lng:32.899829},
+        zoom: 15,
+        center: {lat: 30.044420, lng:31.235712},
     });
 }
 
@@ -85,7 +91,7 @@ var View = function() {
         // Getting place info fromFourSquare
         $.ajax({
             url: 'https://api.foursquare.com/v2/venues/' + item.venueID +
-            '?client_id=V1K5XTXP0Q2AFTXIHGHNQIHOV0LL2XA2JBILCZM2ASOED2C5&client_secret=K3JTSPXIUFYNGXHG5NJAPQ0KP5V2MKOVJMZU1KZGS0TQTRF0',
+            '?client_id=V1K5XTXP0Q2AFTXIHGHNQIHOV0LL2XA2JBILCZM2ASOED2C5&client_secret=K3JTSPXIUFYNGXHG5NJAPQ0KP5V2MKOVJMZU1KZGS0TQTRF0&v=20180223',
             dataType: "json"
         }).done(function (data) {
 
@@ -115,7 +121,7 @@ var View = function() {
 
         // Foursquare error
         }).fail(function() {
-            document.getElementById('FSError').innerHTML = 'Error!';
+            document.getElementById('Error').innerHTML = 'Error!';
         });
 
         
