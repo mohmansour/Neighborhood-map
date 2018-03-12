@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Aswan Treasures</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/bootstrap.css">
+</head>
+
+<body>
+
+    <section class="error-message">
+        <div class="alert-danger" role="alert" id="FSError"></div>
+    </section>
+       
+            <div id="frame" class="col-md-12">
+                <div class="col-md-3">
+                    <h2>Aswan Treasures</h2>
+                    <hr>
+                    <form>
+                        <input placeholder=" Choose Location ... " data-bind="textInput: filter, event: {keyup: locationsFilter}" id="searchfilter">
+                    </form>
+                    <hr>
+                    <ul data-bind="foreach: filteredLocations" id="list">
+                        <li data-bind="click: $parent.showInfo" class="list-items"> <span data-bind="text: title"> </span></li>
+                    </ul>
+                </div>
+
+                <div id="map" class="col-md-9"></div>
+            </div>
+       
+    <script src="js/jquery-3.1.1.min.js"></script>
+    <script src='js/knockout-3.4.2.js'></script>
+    <script src="js/script.js"></script>
+
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBEQeJmLB1paEemICN1WicA4A7RUs9AjpQ&v=3&callback=initMap" onerror="mapFailed()">
+    </script>
+
+</body>
+
+</html>
