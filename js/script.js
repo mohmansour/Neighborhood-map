@@ -8,25 +8,21 @@ var locations = [
            location: {lat: 30.050117, lng: 31.238919},
            venueID:'5320a3d3498e1a85cdc44768'
          },
-         //error
           {
            title: 'Cairo Opera House',
            location: {lat: 30.042487, lng: 31.224457},
            venueID:'4c963c5303413704fd8982ef'
          },
-         //error
           {
            title: 'Qasr al-Nil Bridge',
            location: {lat: 30.043768, lng: 31.229450},
            venueID:'4e69b9f445ddadf2d027e96e'
          },
-         //error
           {
            title: 'Cairo Tower',
            location: {lat: 30.045915, lng: 31.224290},
            venueID:'4c3c3e06a9509c74150c395b'
          },
-         //error
           {
            title: 'The Egyptian Museum',
            location: {lat: 30.047847, lng: 31.233649},
@@ -57,6 +53,11 @@ function gmap() {
         zoom: 15,
         center: {lat: 30.044420, lng:31.235712},
     });
+}
+
+// Handling map error
+function Failed() {
+    alert('Google Maps Loading Failed. Please check your internet connection and try again.');
 }
 
 var Locat = function(data) {
