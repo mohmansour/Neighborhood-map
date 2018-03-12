@@ -56,7 +56,7 @@ function gmap() {
 }
 
 // Handling map error
-function Failed() {
+function mapFailed() {
     alert('Google Maps Loading Failed. Please check your internet connection and try again.');
 }
 
@@ -166,11 +166,11 @@ var View = function() {
     self.filter = ko.observable('');
 
     self.locationsFilter = function() {
-        var searchFilter = self.filter().toUpperCase();
+        var searchFilter = self.filter().toLowerCase();
         self.filteredLocations.removeAll();
         self.place.forEach(function(item) {
             item.marker.setVisible(false);
-            if(item.title.toUpperCase().indexOf(searchFilter) !== -1) {
+            if(item.title.toLowerCase().indexOf(searchFilter) !== -1) {
                 self.filteredLocations.push(item);
             }
         });
